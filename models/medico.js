@@ -16,7 +16,7 @@ const MedicoSchema = Schema({
     },
     hospital: {
         type: Schema.Types.ObjectId,
-        ref: 'Hospitals',
+        ref: 'Hospital',
         required: true,
     }
 

@@ -43,8 +43,8 @@ const getCollection = async (req, res = response) => {
         switch ( tabla ) {
             case 'medicos':
                 data = await Medico.find({ nombre: regex })
-                                    .populate('Usuario','nombre img')
-                                    .populate('hospitales','nombre img');
+                                    .populate('usuario','nombre img')
+                                    .populate('hospital','nombre img');
                 console.log(data);
                 break;
             case 'hospitales':

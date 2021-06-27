@@ -3,22 +3,22 @@ const Medico = require('../models/medico');
 
 
 
-const getMedicos = async( req, res = response ) => {
-  const medicos = await Medico.find()
-  .populate('usuarios', 'nombre img')
-  .populate('hospitals', 'nombre img');
+const getMedicos = async (req, res = response) => {
+    const medicos = await Medico.find()
+        .populate('usuario', 'nombre img')
+        .populate('hospital', 'nombre img');
 
     res.json({
         ok: true,
-       medicos,
+        medicos,
     });
 
- 
+
 
 }
 
-const crearMedico = async( req, res = response ) => {
-    
+const crearMedico = async (req, res = response) => {
+
     const uid = req.uid;
     const medico = new Medico({
         usuario: uid,
@@ -31,9 +31,9 @@ const crearMedico = async( req, res = response ) => {
 
         res.json({
             ok: true,
-           medico: medicoDB
+            medico: medicoDB
         });
-    
+
     } catch (e) {
         console.log(e);
         res.status(500).json({
@@ -42,11 +42,11 @@ const crearMedico = async( req, res = response ) => {
         });
     }
 
- 
+
 }
 
-const actualizarMedico = async( req, res = response ) => {
-  
+const actualizarMedico = async (req, res = response) => {
+
     const id = req.params.id;
     const uid = req.uid;
     try {
@@ -64,7 +64,7 @@ const actualizarMedico = async( req, res = response ) => {
             usuario: uid
         };
 
-        const medicoActualizado = await Medico.findByIdAndUpdate(id, cambiosMedico, {new: true});
+        const medicoActualizado = await Medico.findByIdAndUpdate(id, cambiosMedico, { new: true });
 
         res.json({
             ok: true,
@@ -82,8 +82,8 @@ const actualizarMedico = async( req, res = response ) => {
 }
 
 
-const borrarMedico = async( req, res = response ) => {
-  
+const borrarMedico = async (req, res = response) => {
+
     const id = req.params.id;
     try {
         const medico = await Medico.findById(id);
@@ -94,7 +94,7 @@ const borrarMedico = async( req, res = response ) => {
             });
         }
 
-        await Medico.findByIdAndDelete(id);    
+        await Medico.findByIdAndDelete(id);
 
 
         res.json({
@@ -113,10 +113,40 @@ const borrarMedico = async( req, res = response ) => {
 }
 
 
+const getMedicoById = async (req, res = response) => {
+
+    const id = req.params.id;
+    try {
+
+        const medico = await Medico.findById(id)
+            .populate('usuario', 'nombre img')
+            .populate('hospital', 'nombre img');
+            res.json({
+                ok: true,
+                medico,
+            });
+    
+
+    } catch (e) {
+        console.log(e);
+        res.json({
+            ok: true,
+            msg: 'Hable con el administrador'
+        });
+
+    }
+
+
+
+
+}
+
+
 
 module.exports = {
     getMedicos,
     crearMedico,
     actualizarMedico,
-    borrarMedico
+    borrarMedico,
+    getMedicoById
 }
