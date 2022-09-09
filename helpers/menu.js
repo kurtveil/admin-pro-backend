@@ -16,6 +16,7 @@
             {titulo: 'Lista de tiendas', url: 'usuarios'},
             {titulo: 'usuarios', url: 'usuarios'},
           ]
+          
         }
       ];
 
