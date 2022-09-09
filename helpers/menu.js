@@ -2,23 +2,19 @@
 
     const menu = [
         {
-          titulo: 'Dashboard',
+          titulo: 'Administrador',
           icono: 'mdi mdi-gauge',
           submenu: [
-            {titulo: 'Gráficas', url: 'grafica1'},
-            {titulo: 'Main', url: '/'},
-            {titulo: 'ProgressBar', url: 'progress'},
-            {titulo: 'Promesas', url: 'promesas'},
-            {titulo: 'Rxjs', url: 'rxjs'},
+            {titulo: 'Lista pedidos', url: 'lista-pedidos'},
+            {titulo: 'Publica tu oferta', url: 'ofertas'},
           ]
         },
         {
-          titulo: 'Mantenimientos',
+          titulo: 'Tiendas',
           icono: 'mdi mdi-folder-lock-open',
           submenu: [
-            // {titulo: 'Usuarios', url: 'usuarios'},
-            {titulo: 'Hospitales', url: 'hospitales'},
-            {titulo: 'Médicos', url: 'medicos'},
+            {titulo: 'Lista de tiendas', url: 'usuarios'},
+            {titulo: 'usuarios', url: 'usuarios'},
           ]
         }
       ];
