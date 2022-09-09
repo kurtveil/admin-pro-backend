@@ -9,7 +9,7 @@ const borrarImagen  = (path) => {
         // Borrar la imagen anterior
         fs.unlinkSync(path);
     } 
-} 
+}   
 const actualizarImagen = async(tipo, id, nombreArchivo) => {
 
     let pathViejo = '';
