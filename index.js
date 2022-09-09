@@ -28,6 +28,7 @@ app.use( '/api/medicos', require('./routes/medicos') );
 app.use( '/api/login', require('./routes/auth') );
 app.use( '/api/todo', require('./routes/busquedas') );
 app.use( '/api/uploads', require('./routes/uploads') );
+app.use( '/api/ofertas', require('./routes/ofertas') );
 
 // lo ultimo 
 app.get('*', (req, res) => {

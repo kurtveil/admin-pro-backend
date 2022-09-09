@@ -13,8 +13,7 @@
           titulo: 'Tiendas',
           icono: 'mdi mdi-folder-lock-open',
           submenu: [
-            {titulo: 'Lista de tiendas', url: 'usuarios'},
-            {titulo: 'usuarios', url: 'usuarios'},
+            {titulo: 'Lista de tiendas', url: 'lista-tiendas'},
           ]
         }
       ];
