@@ -5,11 +5,7 @@
           titulo: 'Administrador',
           icono: 'mdi mdi-gauge',
           submenu: [
-            {titulo: 'Principal', url: 'grafica1'},
-            {titulo: 'Menu', url: '/'},
             {titulo: 'Lista pedidos', url: 'lista-pedidos'},
-            {titulo: 'Inventario', url: 'inventario'},
-            {titulo: 'Historial de entregas', url: 'historial'},
             {titulo: 'Publica tu oferta', url: 'ofertas'},
           ]
         },
