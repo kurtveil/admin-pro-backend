@@ -1,4 +1,4 @@
-# AdminPro  - Backend
+# Administración 
 
 Recuerden ejecutar npm i para instalar modulos
 
